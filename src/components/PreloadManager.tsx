@@ -21,6 +21,12 @@ const PreloadManager = () => {
             { src: '/videos/bader.mp4', type: 'video' },
             { src: '/macbook.png', type: 'image' },
             { src: '/iphone.png', type: 'image' },
+            { src: '/images/4elfagr.png', type: 'image' },
+            { src: '/images/bader2.png', type: 'image' },
+            { src: '/images/calearth.png', type: 'image' },
+            { src: '/images/crunch.png', type: 'image' },
+            { src: '/images/icarus.png', type: 'image' },
+            { src: '/images/washit.png', type: 'image' },
             // Add all your media items here
         ];
 
