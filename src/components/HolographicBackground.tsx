@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState, useMemo, useCallback } from 'react'
 import { useFrame, useThree } from '@react-three/fiber';
 import * as THREE from 'three';
 import debounce from 'lodash/debounce';
+import { useMediaQuery } from "react-responsive";
 
 interface Uniforms {
     u_time: { value: number };
@@ -20,6 +21,7 @@ const HolographicBackground: React.FC = () => {
     const mousePositionRef = useRef({ x: 0, y: 0 });
     const animationFrameRef = useRef<number>();
     const isVisibleRef = useRef(true);
+    const isMobile = useMediaQuery({ maxWidth: 768 });
 
     const { size } = useThree();
 
@@ -28,8 +30,8 @@ const HolographicBackground: React.FC = () => {
         u_time: { value: 0 },
         u_resolution: { value: new THREE.Vector2() },
         u_washout: { value: 0.0 },
-        u_zoom: { value: 3.0 },
-        u_complexity: { value: 0.93 },
+        u_zoom: { value: isMobile ? 0.5 : 0.7 },
+        u_complexity: { value: 1.0 },
         u_mix: { value: 0.2 },
         u_mouse: { value: new THREE.Vector2() }
     }), []);

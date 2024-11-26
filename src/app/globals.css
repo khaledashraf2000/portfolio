@@ -32,7 +32,7 @@
     }
 
     .section-headline.hero {
-        @apply text-8xl md:text-8xl lg:text-8xl text-white font-extrabold;
+        @apply text-8xl md:text-8xl lg:text-8xl text-white font-bold;
     }
 
     .section-description {
