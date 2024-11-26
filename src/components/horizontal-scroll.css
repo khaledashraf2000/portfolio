@@ -1,0 +1,182 @@
+/* General styles */
+.scroll-section-outer {
+    overflow: hidden;
+}
+
+.scroll-trigger-container {
+    overflow: hidden;
+    white-space: normal;
+    width: 100vw;
+}
+
+.scroll-section-inner {
+    display: flex;
+}
+
+/* Section styles */
+.scroll-section {
+    flex: 0 0 auto;
+    height: 100vh;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    overflow: clip;
+}
+
+.scroll-section.first {
+    flex: 0 0 100vw;
+    height: 200vh;
+    justify-content: center;
+    align-items: start;
+}
+
+/* Content wrapper styles */
+.content-wrapper {
+    max-height: 80vh;
+    /* Adjust as needed */
+    /* overflow: hidden; */
+}
+
+.content-wrapper.first {
+    width: 100%;
+    display: flex;
+    padding: 0 2rem;
+    column-gap: 1rem;
+}
+
+/* Video container styles */
+.video-container {
+    width: 50%;
+    height: 80vh;
+    /* Updated from 90vh to 80vh */
+}
+
+.video-container.narrow {
+    width: 100%;
+}
+
+.video-container.secondary {
+    height: 50%;
+}
+
+.video {
+    @apply w-full h-full object-cover rounded-lg;
+}
+
+/* Text container styles */
+.text-container {
+    width: 50%;
+    height: 80vh;
+    /* Updated from 90vh to 80vh */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 1rem;
+}
+
+.text-container.narrow {
+    width: 20%;
+}
+
+.text-container.center {
+    justify-content: center;
+    align-items: center;
+}
+
+.caption {
+    @apply text-base text-gray-800;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .video-container,
+    .text-container {
+        width: 100%;
+    }
+}
+
+/* Sticky styling */
+/* .sticky {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: 100vh;
+} */
+
+.sticky-container {
+    height: 2000vh;
+    /* Total height for the sticky effect (100vh original + 400vh for scrolling) */
+    position: relative;
+    overflow: hidden;
+}
+
+.sticky-content {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* overflow: hidden; */
+}
+
+.scroll-container {
+    height: 500vh;
+    /* Total height: 100vh for initial view + 400vh for scrolling effect */
+}
+
+/* New Mobile Styles */
+.mobile-about-section {
+    padding: 1rem;
+    min-height: auto;
+    overflow: visible;
+}
+
+.content-wrapper-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    .scroll-container {
+        height: auto;
+        min-height: auto;
+    }
+
+    .sticky-content {
+        position: relative;
+        height: auto;
+        overflow: visible;
+    }
+
+    .content-wrapper {
+        max-height: none;
+    }
+
+    .video-container {
+        height: 50vh;
+        margin-bottom: 1rem;
+    }
+
+    .text-container {
+        height: auto;
+        padding: 1rem 0;
+    }
+
+    .video-container.secondary {
+        height: 50vh;
+    }
+
+    .caption {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin: 1rem 0;
+    }
+}

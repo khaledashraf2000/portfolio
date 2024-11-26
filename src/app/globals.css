@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'AngelaBrown';
+    src: url('/fonts/AngelaBrown.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DxGrafik';
+    src: url('/fonts/Libertinage.ttf') format('truetype');
+    font-weight: semibold;
+    font-style: normal;
+}
+
+
+@layer base {
+    body {
+        @apply bg-slate-50 text-black overflow-x-clip text-lg;
+        font-family: 'Noto Sans', sans-serif;
+    }
+}
+
+@layer components {
+    .section-headline {
+        @apply text-xl md:text-3xl lg:text-4xl;
+    }
+
+    .section-headline.hero {
+        @apply text-8xl md:text-8xl lg:text-8xl text-white font-['AngelaBrown'];
+    }
+
+    .section-description {
+        @apply text-base text-gray-800;
+    }
+
+    .section-description.hero {
+        @apply text-sm text-white font-medium;
+    }
+
+    .navbar li {
+        @apply block py-2 px-3 md:p-0 text-white rounded text-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-gray-700;
+    }
+
+    .chip {
+        @apply rounded-lg bg-slate-500 py-0.5 px-2.5 border border-transparent text-sm text-white transition-all shadow-sm hover:bg-slate-800;
+    }
+
+    .btn-primary {
+        @apply w-fit rounded-lg bg-slate-800 py-1 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none;
+    }
+}
+
+.hero-section {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white z-10 w-full;
+}
+
+.sticky-date-container {
+    position: relative;
+    z-index: 10;
+}
+
+.dates-container {
+    position: relative;
+    height: 100%;
+}
+
+.section-headline {
+    position: relative;
+    z-index: 5;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
