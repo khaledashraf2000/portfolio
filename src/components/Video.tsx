@@ -1,29 +1,26 @@
 'use client';
 
-import { useRef } from 'react';
+import React from 'react';
 
 interface VideoProps {
     src: string;
     className?: string;
+    style?: React.CSSProperties;
 }
 
-const Video = ({ src, className = '' }: VideoProps) => {
-    const videoRef = useRef(null);
-
+const Video: React.FC<VideoProps> = ({ src, className, style }) => {
     return (
         <video
-            ref={videoRef}
+            src={src}
+            className={className}
+            style={style}
             autoPlay
-            loop
             muted
-            width="100%"
-            height="auto"
-            preload="auto"  // Ensures video is loaded upfront
-            className={`w-[100%] h-[100%] ${className}`}
-        >
-            <source src={src} type="video/mp4" />
-            Your browser does not support the video tag.
-        </video>
+            loop
+            playsInline
+            disablePictureInPicture
+            controlsList="nodownload noplaybackrate noremoteplayback"
+        />
     );
 };
 
