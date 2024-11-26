@@ -12,14 +12,16 @@ const Video: React.FC<VideoProps> = ({ src, className, style }) => {
     return (
         <video
             src={src}
-            className={className}
+            className={`${className} object-cover`}
             style={style}
             autoPlay
             muted
             loop
             playsInline
             disablePictureInPicture
+            controls={false}
             controlsList="nodownload noplaybackrate noremoteplayback"
+            webkit-playsinline="true"
         />
     );
 };
