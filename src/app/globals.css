@@ -30,7 +30,7 @@
 
 @layer components {
     .section-headline {
-        @apply text-xl md:text-3xl lg:text-4xl;
+        @apply text-xl md:text-3xl lg:text-4xl font-medium md:font-normal;
     }
 
     .section-headline.hero {

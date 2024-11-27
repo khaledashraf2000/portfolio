@@ -89,7 +89,14 @@ export default function AboutSection() {
                         transition={{ duration: 0.5 }}
                     >
                         <VideoSection src="/reel4.mp4" isMobile={true} />
+                    </motion.div>
 
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true, amount: 0.1 }}
+                        transition={{ duration: 0.5 }}
+                    >
                         <TextSection opacity={1} isMobile={true}>
                             <h2 className="caption">Born and raised in Alexandria, Egypt, I have deep love for the Mediterranean life.</h2>
                         </TextSection>
