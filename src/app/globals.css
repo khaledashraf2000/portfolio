@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Mrs+Saint+Delafield&display=swap" rel="stylesheet');
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Lora:ital,wght@0,400..700;1,400..700&family=Mrs+Saint+Delafield&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -32,7 +34,8 @@
     }
 
     .section-headline.hero {
-        @apply text-8xl md:text-8xl lg:text-8xl text-white font-bold;
+        @apply text-9xl md:text-[8.5rem] lg:text-[9rem] text-white;
+        font-family: 'Ephesis', serif;
     }
 
     .section-description {
@@ -83,4 +86,9 @@
 .fade-in {
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
+}
+
+#text {
+    width: 40vw;
+    height: 50vw;
 }

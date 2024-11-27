@@ -34,7 +34,7 @@ const config: Config = {
       animation: {
         shine: 'shine 5s linear infinite',
         'gradient-move': 'gradient 25s ease infinite',
-        "shiny-text": "shiny-text 12s infinite",
+        "shiny-text": "shiny-text 7s infinite",
       },
     },
   },

@@ -26,6 +26,7 @@ const VideoSection: React.FC<VideoSectionProps> = ({
         className="video-container"
         style={{
             width: isMobile ? '100%' : width,
+            height: isMobile ? '100%' : '',
             opacity: isMobile ? 1 : opacity
         }}
     >
@@ -79,23 +80,67 @@ export default function AboutSection() {
 
     if (isMobile) {
         return (
-            <div className="mobile-about-section">
+            <div ref={containerRef} className="mobile-about-section">
                 <div className="content-wrapper-mobile">
-                    <VideoSection src="/reel4.mp4" isMobile={true} />
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true, amount: 0.1 }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <VideoSection src="/reel4.mp4" isMobile={true} />
 
-                    <TextSection opacity={1} isMobile={true}>
-                        <h2 className="caption">Born and raised in Alexandria, Egypt, I have deep love for the Mediterranean life.</h2>
-                    </TextSection>
+                        <TextSection opacity={1} isMobile={true}>
+                            <h2 className="caption">Born and raised in Alexandria, Egypt, I have deep love for the Mediterranean life.</h2>
+                        </TextSection>
+                    </motion.div>
 
-                    <VideoSection src="/reel2.mp4" isMobile={true} />
-                    <VideoSection src="/reel5.mp4" isMobile={true} />
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true, amount: 0.1 }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <VideoSection src="/reel2.mp4" isMobile={true} />
+                    </motion.div>
 
-                    <TextSection opacity={1} isMobile={true}>
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true, amount: 0.1 }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <VideoSection src="/reel5.mp4" isMobile={true} />
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true, amount: 0.1 }}
+                        transition={{ duration: 0.5 }}
+                    >
                         <VideoSection src="/reel.mp4" isMobile={true} />
-                        <p className="caption">These videos were all taken by me while roaming in Alexandria.</p>
-                    </TextSection>
+                    </motion.div>
 
-                    <VideoSection src="/reel7.mp4" isMobile={true} />
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true, amount: 0.1 }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <TextSection opacity={1} isMobile={true}>
+                            <p className="caption">These videos were all taken by me while roaming in Alexandria.</p>
+                        </TextSection>
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true, amount: 0.1 }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <VideoSection src="/reel7.mp4" isMobile={true} />
+                    </motion.div>
                 </div>
             </div>
         );
@@ -116,21 +161,6 @@ export default function AboutSection() {
                             <VideoSection src="/reel2.mp4" opacity={opacities[1]} width="100%" />
                         </div>
                     </TextSection>
-                    {/* <TextSection opacity={opacities[1]}>
-                        <h2 className="caption">Born and raised in Alexandria, Egypt, I have deep love for the Mediterranean life.</h2>
-                        <motion.div
-                            className="video-container secondary"
-                            style={{ opacity: opacities[1] }}
-                        >
-                            <HoverCard>
-                                <Video
-                                    src="/reel2.mp4"
-                                    className="video"
-                                    style={{ objectPosition: '50% 60%' }}
-                                />
-                            </HoverCard>
-                        </motion.div>
-                    </TextSection> */}
 
                     <VideoSection src="/reel5.mp4" opacity={opacities[2]} />
 

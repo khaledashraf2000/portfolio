@@ -27,10 +27,10 @@ const HolographicBackground: React.FC = () => {
 
     // Memoize uniforms to prevent unnecessary recreations
     const uniforms = useMemo<Uniforms>(() => ({
-        u_time: { value: 0 },
+        u_time: { value: 20.0 },
         u_resolution: { value: new THREE.Vector2() },
         u_washout: { value: 0.0 },
-        u_zoom: { value: isMobile ? 0.5 : 0.7 },
+        u_zoom: { value: isMobile ? 0.25 : 0.7 },
         u_complexity: { value: 1.0 },
         u_mix: { value: 0.2 },
         u_mouse: { value: new THREE.Vector2() }
