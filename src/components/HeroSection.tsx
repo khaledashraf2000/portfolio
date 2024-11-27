@@ -73,7 +73,7 @@ export default function HeroSection() {
                     custom={0.4}
                     variants={fadeIn}
                 >
-                    <ShinyText className='text-white/80 font-sans text-base md:text-xl text-center'>
+                    <ShinyText className='text-white/70 font-sans text-base md:text-xl text-center'>
                         The product & visual design portfolio of
                     </ShinyText>
                     <h1 className='section-headline hero text-center w-full pr-10'>Khaled <span className='hidden md:inline'>Ashraf</span></h1>
