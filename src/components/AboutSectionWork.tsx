@@ -313,8 +313,20 @@ export default function AboutSectionWork() {
                     I started freelancing as a visual designer
                 </h1>
                 <p className="section-description pt-4">
-                    Designing brand identities, logos, and social media posts
+                    Responsible for creating compelling visual designs for various brands and businesses:
                 </p>
+                <ul className="list-disc list-inside section-description">
+                    <li>
+                        Designed logos and brand identities that effectively communicated the clients' vision
+                    </li>
+                    <li>
+                        Created engaging and eye-catching social media posts
+                    </li>
+                    <li>
+                        Created posters and other assets for brands, ensuring smooth printing and production without issues
+                    </li>
+
+                </ul>
                 <div className="pt-10">
                     <div className="grid grid-cols-4 grid-rows-6 gap-4 h-[40rem] w-full">
                         {projectData.map((project, index) => (
@@ -325,12 +337,48 @@ export default function AboutSectionWork() {
             </Section>
 
             <p className="text-center mt-36 mb-16 uppercase">Experience</p>
+            {/* Xceed Section */}
+            <Section
+                year="Aug 2023 - Sep 2023"
+                title=""
+                isHeader={true}
+                description=""
+            >
+                <h1 className="section-headline">
+                    UI Design Intern @ Xceed
+                </h1>
+                <div className="flex flex-wrap pt-4 gap-2 whitespace-nowrap">
+                    {skillsData.xceed.map(skill => (
+                        <span key={skill} className="chip">{skill}</span>
+                    ))}
+                </div>
+                <p className="section-description pt-4 max-w-2xl">
+                    Collaborated with a team of developer interns to design a task management web application, Taskify:
+                </p>
+                <ul className="list-disc list-inside section-description">
+                    <li>
+                        Designed the user interface, focusing on creating an intuitive and user-friendly experience
+                    </li>
+                    <li>
+                        Developed the user experience flow, ensuring smooth task navigation and management
+                    </li>
+                    <li>
+                        Coordinated with developers to align design and functionality seamlessly
+                    </li>
+                </ul>
+                <motion.div className="mt-10 w-full flex justify-between">
+                    <button className="btn-primary flex-wrap flex h-fit min-w-fit" type="button">
+                        View full case study
+                    </button>
+                    <MacbookMockup videoUrl="/xceed.mp4" />
+                </motion.div>
+            </Section>
+
             {/* Experience Section */}
             <Section
                 year="Mar 2022 - Sep 2022"
                 title=""
                 description=""
-                isHeader={true}
                 sectionName=""
             >
                 <div className="flex justify-between gap-10">
@@ -351,8 +399,26 @@ export default function AboutSectionWork() {
                             ))}
                         </div>
                         <p className="section-description pt-4">
-                            Roomera is a fun and intuitive VR, AR and mobile tool made to help people imagine and explore their home renovation ideas, so that they are able to visualize their ideas before carrying out their renovation project.
+                            Roomera is a fun and intuitive VR, AR, and mobile tool designed to help people imagine and explore the future.
                         </p>
+                        <ul className="list-disc list-inside section-description">
+                            <li>
+                                Conducted competitive analysis using SWOT to understand and inform design strategy
+                            </li>
+                            <li>
+                                Conducted user interviews and synthesized insights to verify assumptions and refine customer
+                                segmentation
+                            </li>
+                            <li>
+                                Planned and iterated on surveys to capture meaningful user feedback
+                            </li>
+                            <li>
+                                Created interactive prototypes and wireframes for a mobile application interface
+                            </li>
+                            <li>
+                                Conducted multiple usability tests to ensure the interface was intuitive and user-friendly
+                            </li>
+                        </ul>
                         <Link href="/roomera">
                             <button className="btn-primary mt-10" type="button">
                                 View full case study
@@ -368,31 +434,7 @@ export default function AboutSectionWork() {
                 </div>
             </Section>
 
-            {/* Xceed Section */}
-            <Section
-                year="Aug 2023 - Sep 2023"
-                title=""
-                description=""
-            >
-                <h1 className="section-headline">
-                    UI Design Intern @ Xceed
-                </h1>
-                <div className="flex flex-wrap pt-4 gap-2 whitespace-nowrap">
-                    {skillsData.xceed.map(skill => (
-                        <span key={skill} className="chip">{skill}</span>
-                    ))}
-                </div>
-                <p className="section-description pt-4 max-w-2xl">
-                    I collaborated with my fellow front-end developer interns to create a simple yet functional and easy to use Task Management webapp. I also had the opportunity to chat with designers and engineers and learned from them how the business in general works
-                </p>
 
-                <motion.div className="mt-10 w-full flex justify-between">
-                    <button className="btn-primary flex-wrap flex h-fit" type="button">
-                        View full case study
-                    </button>
-                    <MacbookMockup videoUrl="/xceed.mp4" />
-                </motion.div>
-            </Section>
         </div>
 
     )
