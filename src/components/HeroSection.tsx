@@ -76,7 +76,7 @@ export default function HeroSection() {
                     <ShinyText className='text-white/70 font-sans text-base md:text-xl text-center'>
                         The product & visual design portfolio of
                     </ShinyText>
-                    <h1 className='section-headline hero text-center w-full pr-10'>Khaled <span className='hidden md:inline'>Ashraf</span></h1>
+                    <h1 className='section-headline hero text-center w-full pr-7'>Khaled <span>Ashraf</span></h1>
                 </motion.div>
 
                 <motion.div

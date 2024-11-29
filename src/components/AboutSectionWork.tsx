@@ -376,9 +376,9 @@ export default function AboutSectionWork() {
                                 Coordinated with developers to align design and functionality seamlessly
                             </li>
                         </ul>
-                        <Link href="">
+                        <Link href="https://taskmaster-231fe.web.app/login" target="_blank" rel="noopener noreferrer">
                             <button className="btn-primary mt-10" type="button">
-                                View full case study
+                                Visit live website
                             </button>
                         </Link>
                     </motion.div>

@@ -184,11 +184,11 @@ export default function AboutSectionWorkMobile() {
                     <div className="flex justify-center mb-6">
                         <MacbookMockup videoUrl="/xceed.mp4" />
                     </div>
-                    <div className="flex justify-center">
-                        <button className="btn-primary" type="button">
-                            View full case study
+                    <Link href="https://taskmaster-231fe.web.app/login" target="_blank" rel="noopener noreferrer" className="w-full flex justify-center">
+                        <button className="btn-primary mt-10" type="button">
+                            Visit live website
                         </button>
-                    </div>
+                    </Link>
                 </div>
                 {/* Roomera Section */}
                 <div>

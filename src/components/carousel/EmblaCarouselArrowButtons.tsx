@@ -44,10 +44,16 @@ export const usePrevNextButtons = (
   return { prevBtnDisabled, nextBtnDisabled, onPrevButtonClick, onNextButtonClick }
 }
 
-type ButtonProps = ComponentPropsWithRef<'button'>
+type ButtonProps = ComponentPropsWithRef<'button'> & {
+  className?: string
+}
 
-export const PrevButton: React.FC<ButtonProps> = ({ children, ...restProps }) => (
-  <button className="embla__button embla__button--prev" type="button" {...restProps}>
+export const PrevButton: React.FC<ButtonProps> = ({ children, className = '', ...restProps }) => (
+  <button
+    className={`embla__button embla__button--prev ${className}`}
+    type="button"
+    {...restProps}
+  >
     <svg className="embla__button__svg" viewBox="0 0 532 532">
       <path
         fill="currentColor"
@@ -58,8 +64,12 @@ export const PrevButton: React.FC<ButtonProps> = ({ children, ...restProps }) =>
   </button>
 )
 
-export const NextButton: React.FC<ButtonProps> = ({ children, ...restProps }) => (
-  <button className="embla__button embla__button--next" type="button" {...restProps}>
+export const NextButton: React.FC<ButtonProps> = ({ children, className = '', ...restProps }) => (
+  <button
+    className={`embla__button embla__button--next ${className}`}
+    type="button"
+    {...restProps}
+  >
     <svg className="embla__button__svg" viewBox="0 0 532 532">
       <path
         fill="currentColor"
