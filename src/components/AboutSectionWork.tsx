@@ -151,7 +151,7 @@ const Section = ({ year, title, description, children, extraContent, delay = 0, 
     }, []);
 
     return (
-        <div className="grid grid-cols-4 divide-x">
+        <div className="grid grid-cols-5 divide-x">
             <div className={`col-span-1 h-full ${isHeader && isFirst ? '' : isHeader ? '' : 'pt-24'}`}>
                 {isHeader && (
                     <motion.p
@@ -174,7 +174,7 @@ const Section = ({ year, title, description, children, extraContent, delay = 0, 
                     {year}
                 </motion.p>
             </div>
-            <div className={`col-span-3 px-7 ${isHeader && isFirst ? '' : isHeader ? '' : 'pt-24'}`} ref={sectionRef}>
+            <div className={`col-span-4 px-7 ${isHeader && isFirst ? '' : isHeader ? '' : 'pt-24'}`} ref={sectionRef}>
                 <motion.div
                     custom={delay + 0.25}
                     variants={fadeInVariant}
@@ -341,40 +341,55 @@ export default function AboutSectionWork() {
             <Section
                 year="Aug 2023 - Sep 2023"
                 title=""
-                isHeader={true}
                 description=""
+                sectionName=""
+                isHeader={true}
             >
-                <h1 className="section-headline">
-                    UI Design Intern @ Xceed
-                </h1>
-                <div className="flex flex-wrap pt-4 gap-2 whitespace-nowrap">
-                    {skillsData.xceed.map(skill => (
-                        <span key={skill} className="chip">{skill}</span>
-                    ))}
+                <div className="flex justify-between gap-10">
+                    <motion.div
+                        className="flex flex-col justify-start w-[65%]"
+                        variants={fadeInVariant}
+                        custom={0.5}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                    >
+                        <h1 className="section-headline">
+                            UI Design Intern @ Xceed
+                        </h1>
+                        <div className="flex flex-wrap pt-4 gap-2 whitespace-nowrap">
+                            {skillsData.xceed.map(skill => (
+                                <span key={skill} className="chip">{skill}</span>
+                            ))}
+                        </div>
+                        <p className="section-description pt-4 max-w-2xl">
+                            Collaborated with a team of developer interns to design a task management web application, Taskify:
+                        </p>
+                        <ul className="list-disc list-inside section-description">
+                            <li>
+                                Designed the user interface, focusing on creating an intuitive and user-friendly experience
+                            </li>
+                            <li>
+                                Developed the user experience flow, ensuring smooth task navigation and management
+                            </li>
+                            <li>
+                                Coordinated with developers to align design and functionality seamlessly
+                            </li>
+                        </ul>
+                        <Link href="">
+                            <button className="btn-primary mt-10" type="button">
+                                View full case study
+                            </button>
+                        </Link>
+                    </motion.div>
+
+                    <motion.div>
+                        <MacbookMockup videoUrl="/xceed.mp4" />
+                    </motion.div>
                 </div>
-                <p className="section-description pt-4 max-w-2xl">
-                    Collaborated with a team of developer interns to design a task management web application, Taskify:
-                </p>
-                <ul className="list-disc list-inside section-description">
-                    <li>
-                        Designed the user interface, focusing on creating an intuitive and user-friendly experience
-                    </li>
-                    <li>
-                        Developed the user experience flow, ensuring smooth task navigation and management
-                    </li>
-                    <li>
-                        Coordinated with developers to align design and functionality seamlessly
-                    </li>
-                </ul>
-                <motion.div className="mt-10 w-full flex justify-between">
-                    <button className="btn-primary flex-wrap flex h-fit min-w-fit" type="button">
-                        View full case study
-                    </button>
-                    <MacbookMockup videoUrl="/xceed.mp4" />
-                </motion.div>
             </Section>
 
-            {/* Experience Section */}
+            {/* Roomera*/}
             <Section
                 year="Mar 2022 - Sep 2022"
                 title=""

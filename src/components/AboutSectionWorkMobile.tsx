@@ -101,6 +101,7 @@ export default function AboutSectionWorkMobile() {
 
                 <div className="mb-16">
                     <div className="mb-10">
+                        <p className="section-description uppercase text-start sticky z-10 pb-4">2018 - 2023</p>
                         <h1 className="text-2xl font-medium mb-4 text-left">
                             I studied computer engineering and I had passion for art & design
                         </h1>
@@ -123,6 +124,7 @@ export default function AboutSectionWorkMobile() {
                 viewport={{ once: true }}
             >
                 <div className="mb-16">
+                    <p className="section-description uppercase text-start sticky z-10 pb-4">2021</p>
                     <h1 className="text-2xl font-medium mb-4 text-left">
                         I started a journal about user-centered design
                     </h1>
@@ -141,6 +143,7 @@ export default function AboutSectionWorkMobile() {
                 viewport={{ once: true }}
             >
                 <div className="mb-16">
+                    <p className="section-description uppercase text-start sticky z-10 pb-4">2021 - Present</p>
                     <h1 className="text-2xl font-medium mb-4 text-left">
                         I started freelancing as a visual designer
                     </h1>
@@ -164,8 +167,32 @@ export default function AboutSectionWorkMobile() {
             >
                 <p className="text-center mb-10 uppercase">Experience</p>
 
-                {/* Roomera Section */}
+                {/* Xceed Section */}
                 <div className="mb-16">
+                    <p className="section-description uppercase text-start sticky z-10 pb-4">Aug 2023 - Sep 2023</p>
+                    <h1 className="text-2xl font-medium mb-4 text-left">
+                        UI Design Intern @ Xceed
+                    </h1>
+                    <div className="flex flex-wrap justify-start gap-2 mb-4">
+                        {skillsData.xceed.map(skill => (
+                            <span key={skill} className="chip">{skill}</span>
+                        ))}
+                    </div>
+                    <p className="text-left text-gray-600 mb-6">
+                        I collaborated with my fellow front-end developer interns to create a simple yet functional and easy to use Task Management webapp. I also had the opportunity to chat with designers and engineers and learned from them how the business in general works
+                    </p>
+                    <div className="flex justify-center mb-6">
+                        <MacbookMockup videoUrl="/xceed.mp4" />
+                    </div>
+                    <div className="flex justify-center">
+                        <button className="btn-primary" type="button">
+                            View full case study
+                        </button>
+                    </div>
+                </div>
+                {/* Roomera Section */}
+                <div>
+                    <p className="section-description uppercase text-start sticky z-10 pb-4">Mar 2022 - Sep 2022</p>
                     <h1 className="text-2xl font-medium mb-4 text-left">
                         UX Research & Design Intern<br />@ Roomera, Inc.
                     </h1>
@@ -189,28 +216,7 @@ export default function AboutSectionWorkMobile() {
                     </div>
                 </div>
 
-                {/* Xceed Section */}
-                <div>
-                    <h1 className="text-2xl font-medium mb-4 text-left">
-                        UI Design Intern @ Xceed
-                    </h1>
-                    <div className="flex flex-wrap justify-start gap-2 mb-4">
-                        {skillsData.xceed.map(skill => (
-                            <span key={skill} className="chip">{skill}</span>
-                        ))}
-                    </div>
-                    <p className="text-left text-gray-600 mb-6">
-                        I collaborated with my fellow front-end developer interns to create a simple yet functional and easy to use Task Management webapp. I also had the opportunity to chat with designers and engineers and learned from them how the business in general works
-                    </p>
-                    <div className="flex justify-center mb-6">
-                        <MacbookMockup videoUrl="/xceed.mp4" />
-                    </div>
-                    <div className="flex justify-center">
-                        <button className="btn-primary" type="button">
-                            View full case study
-                        </button>
-                    </div>
-                </div>
+
             </motion.div>
         </div>
     );

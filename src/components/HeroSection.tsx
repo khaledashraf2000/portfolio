@@ -43,27 +43,27 @@ export default function HeroSection() {
 
     return (
         <div
-            className="relative h-screen w-full bg-slate-800 overflow-hidden"
+            className="relative h-screen w-full bg-slate-600 overflow-hidden"
         // Uncomment these if you want mouse activity to trigger cursor
         // onMouseOver={() => setIsActive(true)}
         // onMouseLeave={() => setIsActive(false)}
         >
             {!loadingComplete && <LoadingScreen onLoadingComplete={handleLoadingComplete} />}
 
-            <Suspense fallback={<div className="fixed inset-0 bg-slate-800" />}>
+            <Suspense fallback={<div className="fixed inset-0 bg-slate-600" />}>
                 <Canvas className="absolute inset-0 mix-blend-soft-light">
                     <HolographicBackground />
                 </Canvas>
             </Suspense>
 
-            <div className="absolute inset-0 flex flex-col justify-between items-center px-4 py-6 z-10">
+            <div className="absolute inset-0 flex flex-col justify-between items-center px-4 py-4 z-10">
                 <motion.div
                     initial="hidden"
                     animate={loadingComplete ? "visible" : "hidden"}
                     custom={0.2}
                     variants={fadeIn}
                 >
-                    <Navbar />
+
                 </motion.div>
 
                 <motion.div
@@ -80,17 +80,22 @@ export default function HeroSection() {
                 </motion.div>
 
                 <motion.div
-                    className="flex justify-center items-center section-description hero text-center uppercase pb-5"
+                    className="flex justify-center items-center section-description hero text-center pb-5"
                     initial="hidden"
                     animate={loadingComplete ? "visible" : "hidden"}
                     custom={0.6}
                     variants={fadeIn}
                 >
-                    <p>I'm a</p>
+                    {/* <p>I'm a</p>
                     <span className="inline-flex items-center justify-center border-2 border-white mx-2 px-2 rounded-xl w-[120px]">
                         <FlipWords words={['creative', 'designer', 'developer', 'human']} />
                     </span>
-                    <p>based in Egypt</p>
+                    <p>based in Egypt</p> */}
+                    <p className='max-w-xl'>
+                        A UX designer with a strong background in user research, interface design, and front-end development.
+                        Experienced in creating user-centric designs for startups, and freelance projects. Proficient in tools like
+                        Figma, Photoshop, and Illustrator. I deliver solutions that align with user needs and business goals.
+                    </p>
                 </motion.div>
             </div>
             {/* <Cursor isActive={isActive} /> */}

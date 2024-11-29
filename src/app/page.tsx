@@ -1,4 +1,6 @@
+import SVGanimation from '@/components/SVGanimation';
 import dynamic from 'next/dynamic';
+
 
 const HeroSection = dynamic(() => import('@/components/HeroSection'), {
   loading: () => <div className="h-screen bg-slate-500" />
@@ -19,6 +21,8 @@ const ContactSection = dynamic(() => import('@/components/ContactSection'), {
 export default function Home() {
   return (
     <main>
+      {/* <SVGanimation /> */}
+
       <HeroSection />
       <AboutSection />
       <AboutSectionWork />

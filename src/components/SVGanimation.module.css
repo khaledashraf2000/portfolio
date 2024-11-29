@@ -1,0 +1,30 @@
+.khaled .mask {
+  fill: none;
+  stroke-miterlimit: 10;
+}
+
+.mask {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+}
+
+.playAnimation .mask {
+  animation: strokeOffset 2s ease-in-out forwards;
+}
+
+#mask-K-left {
+  animation-delay: 0s;
+  stroke: #FFFFFF;
+}
+
+#mask-K-right {
+  animation-delay: 2s;
+  /* Changed from 1s to 2s to start after left part finishes */
+  stroke: #FFFFFF;
+}
+
+@keyframes strokeOffset {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
