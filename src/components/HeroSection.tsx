@@ -50,11 +50,9 @@ export default function HeroSection() {
         >
             {!loadingComplete && <LoadingScreen onLoadingComplete={handleLoadingComplete} />}
 
-            <Suspense fallback={<div className="fixed inset-0 bg-slate-600" />}>
-                <Canvas className="absolute inset-0 mix-blend-soft-light">
-                    <HolographicBackground />
-                </Canvas>
-            </Suspense>
+            <Canvas className="absolute inset-0 mix-blend-soft-light">
+                <HolographicBackground />
+            </Canvas>
 
             <div className="absolute inset-0 flex flex-col justify-between items-center px-4 py-4 z-10">
                 <motion.div

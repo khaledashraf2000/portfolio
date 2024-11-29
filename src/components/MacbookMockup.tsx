@@ -11,7 +11,7 @@ const MacBookVideoMockup = ({ videoUrl, className = '' }: MacBookVideoMockupProp
       {/* Container for both video and frame */}
       <div className="relative w-full max-w-xl sm:max-w-2xl md:max-w-4xl">
         {/* Video layer - positioned behind the frame */}
-        <div className="absolute inset-0 z-0 left-[9%] md:left-[70px] top-[1%] md:top-[8px]">
+        <div className="absolute inset-0 z-0 left-[9%] md:left-[50px] top-[1%] md:top-[8px]">
           <video
             className="w-[91%] sm:w-[91%] h-auto"
             autoPlay

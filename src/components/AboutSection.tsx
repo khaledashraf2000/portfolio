@@ -98,7 +98,7 @@ export default function AboutSection() {
                         transition={{ duration: 0.5 }}
                     >
                         <TextSection opacity={1} isMobile={true}>
-                            <h2 className="caption">Born and raised in Alexandria, Egypt, I have deep love for the Mediterranean life.</h2>
+                            <h2 className="caption">Originally from Alexandria, Egypt, I have deep love for the Mediterranean life.</h2>
                         </TextSection>
                     </motion.div>
 
@@ -136,7 +136,7 @@ export default function AboutSection() {
                         transition={{ duration: 0.5 }}
                     >
                         <TextSection opacity={1} isMobile={true}>
-                            <p className="caption">These videos were all taken by me while roaming in Alexandria.</p>
+                            <p className="caption">I have a hobby of making videos about Alexandria</p>
                         </TextSection>
                     </motion.div>
 
@@ -163,7 +163,7 @@ export default function AboutSection() {
                     <VideoSection src="/reel4.mp4" opacity={opacities[0]} objectPosition="50% 85%" />
 
                     <TextSection opacity={opacities[1]}>
-                        <p className="caption">Born and raised in Alexandria, Egypt, I have deep love for the Mediterranean life.</p>
+                        <p className="caption">Originally from Alexandria, Egypt, I have deep love for the Mediterranean life</p>
                         <div className="video-container narrow">
                             <VideoSection src="/reel2.mp4" opacity={opacities[1]} width="100%" />
                         </div>
@@ -175,7 +175,7 @@ export default function AboutSection() {
                         <div className="video-container narrow">
                             <VideoSection src="/reel.mp4" opacity={opacities[3]} width="100%" />
                         </div>
-                        <p className="caption">These videos were all taken by me while roaming in Alexandria.</p>
+                        <p className="caption">I have a hobby of making videos about Alexandria</p>
                     </TextSection>
 
                     <VideoSection src="/reel7.mp4" opacity={opacities[4]} />
