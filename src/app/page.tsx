@@ -20,7 +20,7 @@ const ContactSection = dynamic(() => import('@/components/ContactSection'), {
 
 export default function Home() {
   return (
-    <main>
+    <>
       {/* <SVGanimation /> */}
 
       <HeroSection />
@@ -28,6 +28,6 @@ export default function Home() {
       <AboutSectionWork />
       {/* <ContactSection /> */}
       {/* <div className='h-screen w-full'></div> */}
-    </main>
+    </>
   );
 }

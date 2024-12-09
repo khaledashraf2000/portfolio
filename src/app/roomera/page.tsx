@@ -16,11 +16,11 @@ const Roomera: NextPage = () => {
     return (
         <>
             {!loadingComplete && <LoadingScreen onLoadingComplete={handleLoadingComplete} />}
-            <main className={'container mx-auto ${loadingComplete ? "display-none" : ""}'}>
+            <section className={'container mx-auto ${loadingComplete ? "display-none" : ""}'}>
                 <div className='flex flex-col items-center justify-center h-screen'>
                     <p className='text-gray-800'>Coming soon</p>
                 </div>
-            </main>
+            </section>
         </>
     );
 };

@@ -6,6 +6,7 @@ import { FlipWords } from './ui/flip-words';
 import { motion } from 'framer-motion';
 import Navbar from './ui/navbar';
 import ShinyText from './ShinyText';
+import HoverCard from './HoverCard';
 
 // Dynamically import heavy components
 const Canvas = dynamic(
@@ -74,7 +75,10 @@ export default function HeroSection() {
                     <ShinyText className='text-white/70 font-sans text-base md:text-xl text-center'>
                         The product & visual design portfolio of
                     </ShinyText>
-                    <h1 className='section-headline hero text-center w-full pr-7'>Khaled <span>Ashraf</span></h1>
+                    <HoverCard>
+
+                        <h1 className='section-headline hero text-center w-full pr-7'>Khaled <span>Ashraf</span></h1>
+                    </HoverCard>
                 </motion.div>
 
                 <motion.div
