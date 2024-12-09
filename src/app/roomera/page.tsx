@@ -182,7 +182,7 @@ const Roomera: NextPage = () => {
                                 and identifying our competitive edge. Through stakeholder discussions and market research,
                                 we conducted a SWOT analysis and heuristic reviews of competitors' apps, visualizing findings with radar charts.
                             </p>
-                            <div className="bg-gray-200 py-8 px-8 flex flex-col gap-2 rounded-lg md:max-w-xl hidden md:block">
+                            <div className="bg-gray-200 py-8 px-8 md:flex md:flex-col gap-2 rounded-lg md:max-w-xl hidden">
                                 <div className="mt-0 mb-0 p-0 flex gap-2">
                                     <Image src="/icons/sparkles.svg" width={16} height={16} alt="sparkles icon" />
                                     <p className="section-description-headline">Conclusion</p>
@@ -247,7 +247,7 @@ const Roomera: NextPage = () => {
                             variants={fadeInVariants}
                             className="flex flex-col md:flex-row w-full items-start gap-8 md:gap-12 h-auto"
                         >
-                            <div className="bg-gray-200 h-max py-8 px-8 flex flex-col gap-2 rounded-lg items-center min-w-fit">
+                            <div className="bg-gray-200 h-max py-8 px-8 flex flex-col gap-2 rounded-lg items-center w-full md:min-w-fit">
                                 <Image
                                     src="/the smiths.jpg"
                                     width={300}
@@ -260,7 +260,7 @@ const Roomera: NextPage = () => {
                                     <li>Have stable income, allowed to take time for this</li>
                                 </ul>
                             </div>
-                            <div className="bg-gray-200 h-max py-8 px-8 flex flex-col gap-2 rounded-lg items-center min-w-fit">
+                            <div className="bg-gray-200 h-max py-8 px-8 flex flex-col gap-2 rounded-lg items-center w-full md:min-w-fit">
                                 <Image
                                     src="/the jones'.jpg"
                                     width={300}
@@ -273,7 +273,7 @@ const Roomera: NextPage = () => {
                                     <li>Have stable income, but maybe busy lives</li>
                                 </ul>
                             </div>
-                            <div className="bg-gray-200 h-max py-8 px-8 flex flex-col gap-2 rounded-lg items-center min-w-fit">
+                            <div className="bg-gray-200 h-max py-8 px-8 flex flex-col gap-2 rounded-lg items-center w-full md:min-w-fit">
                                 <Image
                                     src="/max.jpg"
                                     width={300}
