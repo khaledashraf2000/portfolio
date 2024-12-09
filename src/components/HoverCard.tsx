@@ -123,7 +123,7 @@ function TiltCard({
     }
 
     return (
-        <div className="relative w-full h-full">
+        <div className="relative h-full">
             <motion.div
                 ref={cardRef}
                 onMouseMove={handleMouseMove}

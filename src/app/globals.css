@@ -15,7 +15,7 @@
 
 @layer components {
     .section-headline {
-        @apply text-xl md:text-3xl lg:text-4xl font-medium md:font-normal;
+        @apply text-2xl md:text-3xl lg:text-4xl font-medium md:font-normal;
     }
 
     .section-headline.hero {
@@ -28,6 +28,10 @@
 
     .section-description {
         @apply text-base text-gray-800;
+    }
+
+    .section-description-headline {
+        @apply text-base uppercase text-gray-950 font-medium;
     }
 
     .section-description.hero {
