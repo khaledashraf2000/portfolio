@@ -10,7 +10,6 @@ import {
     BreadcrumbItem,
     BreadcrumbLink,
     BreadcrumbList,
-    BreadcrumbPage,
     BreadcrumbSeparator,
 } from "@/components/Breadcrumbs";
 import HoverCard from '@/components/HoverCard';
@@ -37,9 +36,16 @@ const Roomera: NextPage = () => {
         setLoadingComplete(true);
     };
 
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    };
+
     return (
         <>
-            {!loadingComplete && <LoadingScreen onLoadingComplete={handleLoadingComplete} />}
+            {/* {!loadingComplete && <LoadingScreen onLoadingComplete={handleLoadingComplete} />} */}
 
             <motion.section
                 initial="hidden"
@@ -65,6 +71,7 @@ const Roomera: NextPage = () => {
                 </div>
             </motion.section>
 
+            {/* Roomera GIF */}
             <motion.div
                 initial="hidden"
                 whileInView="visible"
@@ -96,7 +103,7 @@ const Roomera: NextPage = () => {
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.1 }}
                         variants={fadeInVariants}
-                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 w-full gap-y-12 sm:gap-x-16 md:gap-y-0"
+                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 w-full gap-y-4 sm:gap-x-12 md:gap-y-0"
                     >
                         <div className="flex flex-col gap-2 section-description bg-gray-200 p-4 rounded-lg">
                             <h4 className="section-description-headline">Role</h4>
@@ -289,6 +296,203 @@ const Roomera: NextPage = () => {
                             </div>
                         </motion.div>
                     </motion.div>
+
+                    {/* Design */}
+                    <motion.div
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.1 }}
+                        variants={fadeInVariants}
+                        className="flex flex-col gap-12 mt-24 md:flex-row md:justify-between"
+                    >
+                        <div className="flex flex-col gap-4 md:w-2/3">
+                            <h4 className="section-headline text-2xl">Design</h4>
+                            <p className="section-description max-w-xl">
+                                Based on our research, we concluded that it's time to design our application user interface. So I began with making a high-level information architecture diagram, followed by two concepts of a prototype to the application.
+                            </p>
+                            <h5 className='section-description-headline mt-8'>Information Architecture</h5>
+                            <p className='section-description'>
+                                The information architecture was the first step in designing the user interface, as it depicts the logical flow of the application, guiding me to create a user friendly interface.
+                            </p>
+                            <h5 className='section-description-headline mt-8'>Rapid Prototyping & Testing</h5>
+                            <p className='section-description'>
+                                I designed two concepts that followed the initial information architecture, and then conducted usability testing to test whether or not they are easy to use.
+                                Each participant were assigned the following tasks:
+                            </p>
+                            <ul className='section-description list-disc pl-9'>
+                                <li>Add a chair</li>
+                                <li>Remove the chair</li>
+                                <li>Undo</li>
+                                <li>Identify icons</li>
+                            </ul>
+                            <div className="bg-gray-200 py-8 px-8 md:flex md:flex-col gap-2 rounded-lg md:max-w-xl hidden mt-8">
+                                <div className="mt-0 mb-0 p-0 flex gap-2">
+                                    <Image src="/icons/sparkles.svg" width={16} height={16} alt="sparkles icon" />
+                                    <p className="section-description-headline">Conclusion</p>
+                                </div>
+                                <p className="section-description">
+                                    We eventually chose concept 1 over concept 2 according to the user feedback.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className='flex flex-col gap-16'>
+                            <motion.div
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, amount: 0.1 }}
+                                variants={fadeInVariants}
+                            >
+                                <HoverCard>
+                                    <Image
+                                        src="/images/IA.png"
+                                        alt="Information Architecture of Roomera app"
+                                        width={800}
+                                        height={300}
+                                    />
+                                </HoverCard>
+                            </motion.div>
+                            <div className='flex gap-12 items-center justify-end'>
+                                <motion.div
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true, amount: 0.1 }}
+                                    variants={fadeInVariants}
+                                >
+                                    <HoverCard>
+                                        <Image
+                                            src="/prototype concept 1.gif"
+                                            alt="Roomera app prototype concept 1"
+                                            width={230}
+                                            height={300}
+                                        />
+                                    </HoverCard>
+                                </motion.div>
+                                <motion.div
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true, amount: 0.1 }}
+                                    variants={fadeInVariants}
+                                >
+                                    <HoverCard>
+                                        <Image
+                                            src="/prototype concept 2.gif"
+                                            alt="Roomera app prototype concept 2"
+                                            width={250}
+                                            height={300}
+                                        />
+                                    </HoverCard>
+                                </motion.div>
+
+                            </div>
+
+                        </div>
+
+                        <div className="bg-gray-200 py-8 px-8 flex flex-col gap-2 rounded-lg md:max-w-xl md:hidden">
+                            <div className="mt-0 mb-0 p-0 flex gap-2">
+                                <Image src="/icons/sparkles.svg" width={16} height={16} alt="sparkles icon" />
+                                <p className="section-description-headline">Conclusion</p>
+                            </div>
+                            <p className="section-description">
+                                We eventually chose concept 1 over concept 2 according to the user feedback.
+                            </p>
+                        </div>
+                    </motion.div>
+
+                    {/* Conclusion */}
+                    <motion.div
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.1 }}
+                        variants={fadeInVariants}
+                        className="flex flex-col gap-12 mt-24 md:flex-row md:justify-between"
+                    >
+                        <div className="flex flex-col gap-4 md:w-2/3">
+                            <h4 className="section-headline text-2xl">Internship Conclusion</h4>
+                            <p className="section-description max-w-xl">
+                                This concludes the end of my 6-months long internship. I have learned a lot about <strong>the design process, how to conduct user interviews, design a user interface, and carry out usability testing.</strong> With the help of my mentor I was able to make <strong>informed design decisions</strong>, and I am grateful for the opportunity to work on such an amazing project.
+                            </p>
+                            <div className=" md:flex md:flex-col md:max-w-xl hidden mt-8">
+                                <HoverCard>
+                                    <Image
+                                        src="/internship.jpg"
+                                        width={800}
+                                        height={300}
+                                        alt='A picture of me and my mentor Thong Nguyen'
+                                        className='rounded-lg shadow-lg'
+                                    />
+                                </HoverCard>
+                            </div>
+                        </div>
+
+                        <div className='flex flex-col gap-16'>
+                            <motion.div
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, amount: 0.1 }}
+                                variants={fadeInVariants}
+                            >
+                                <HoverCard>
+                                    <Image
+                                        src="/Roomera Letter of Certification.webp"
+                                        alt="Information Architecture of Roomera app"
+                                        width={800}
+                                        height={300}
+                                        className='rounded-lg shadow-lg'
+                                    />
+                                </HoverCard>
+                            </motion.div>
+                        </div>
+
+                        <div className="flex flex-col md:max-w-xl md:hidden">
+                            <HoverCard>
+                                <Image
+                                    src="/internship.jpg"
+                                    width={800}
+                                    height={300}
+                                    alt='A picture of me and my mentor Thong Nguyen'
+                                    className='rounded-lg shadow-lg'
+                                />
+                            </HoverCard>
+                        </div>
+                    </motion.div>
+
+                    <div className='flex flex-col gap-8 md:flex-row md:gap-8 items-center justify-center mt-24'>
+                        <a href="/" className="section-description-headline text-center">
+                            <motion.div
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, amount: 0.1 }}
+                                variants={fadeInVariants}
+                                className="bg-white h-max py-8 px-8 flex justify-center gap-2 rounded-lg items-center w-full md:min-w-fit shadow-lg"
+                            >
+                                <Image
+                                    src="/icons/arrow-left.svg"
+                                    width={32}
+                                    height={32}
+                                    alt="home icon"
+                                />
+                                <p>Back to Home</p>
+                            </motion.div>
+                        </a>
+                        <motion.button
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.1 }}
+                            variants={fadeInVariants}
+                            className="bg-white h-max py-8 px-8 flex justify-center gap-2 rounded-lg items-center w-fit md:min-w-fit shadow-lg"
+                            onClick={scrollToTop}
+                            type='button'
+                        >
+                            <Image
+                                src="/icons/arrow-up.svg"
+                                width={32}
+                                height={32}
+                                alt="home icon"
+                            />
+                            <p className="section-description-headline text-center">Scroll to top</p>
+                        </motion.button>
+                    </div>
                 </div>
             </motion.section>
         </>
