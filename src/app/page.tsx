@@ -1,4 +1,3 @@
-import SVGanimation from '@/components/SVGanimation';
 import dynamic from 'next/dynamic';
 
 
@@ -11,10 +10,6 @@ const AboutSection = dynamic(() => import('@/components/AboutSection'), {
 });
 
 const AboutSectionWork = dynamic(() => import('@/components/AboutSectionWork'), {
-  loading: () => <div className="min-h-screen" />
-});
-
-const ContactSection = dynamic(() => import('@/components/ContactSection'), {
   loading: () => <div className="min-h-screen" />
 });
 

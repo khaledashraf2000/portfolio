@@ -7,6 +7,7 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
+import Image from "next/image";
 
 interface LinkCardProps {
     title: string;
@@ -23,7 +24,7 @@ export default function LinkCard({ title, description, img, url }: LinkCardProps
                 <CardDescription className="whitespace-normal select-none text-left">{description}</CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col h-[50%] justify-center">
-                <img src={img} alt="" className="select-none h-full w-full object-cover" />
+                <Image src={img} alt="" className="select-none h-full w-full object-cover" width={500} height={500} />
             </CardContent>
             <CardFooter>
                 <div className="flex justify-end h-full w-full items-end">

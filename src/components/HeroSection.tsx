@@ -1,10 +1,8 @@
 'use client';
 
-import { Suspense, useState } from 'react';
+import { useState } from 'react';
 import dynamic from 'next/dynamic';
-import { FlipWords } from './ui/flip-words';
 import { motion } from 'framer-motion';
-import Navbar from './ui/navbar';
 import ShinyText from './ShinyText';
 import HoverCard from './HoverCard';
 

@@ -5,6 +5,8 @@ interface MacBookVideoMockupProps {
   className?: string;
 }
 
+import Image from 'next/image';
+
 const MacBookVideoMockup = ({ videoUrl, className = '' }: MacBookVideoMockupProps) => {
   return (
     <div className={`flex justify-center items-center w-full ${className}`}>
@@ -26,10 +28,14 @@ const MacBookVideoMockup = ({ videoUrl, className = '' }: MacBookVideoMockupProp
         </div>
 
         {/* MacBook Pro frame image - positioned on top of the video */}
-        <img
+        <Image
           src="/macbook.png"
           alt="MacBook Pro frame"
+          layout="responsive"
+          width={1000}  // Adjust these to match your image's actual dimensions
+          height={600}
           className="relative z-10 w-full h-auto"
+          priority  // Optional: if this image is above the fold
         />
       </div>
     </div>

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState, useCallback } from "react";
-
+import Image from "next/image";
 import { CardSwipe, CardsSwipeContainer } from "@/components/ui/cards-swipe";
 
 export default function CardsSwipe() {
@@ -37,11 +37,13 @@ export default function CardsSwipe() {
                 damping: 25, // Increased damping
               }}
             >
-              <img
+              <Image
                 src={card.img}
                 alt={`Card ${card.id}`}
                 className="pointer-events-none h-full w-full rounded-lg object-cover"
-                loading="lazy" // Added lazy loading
+                layout="fill"
+                objectFit="cover"
+                priority={index === 0}  // Priority for the first card
               />
             </motion.div>
           </CardSwipe>

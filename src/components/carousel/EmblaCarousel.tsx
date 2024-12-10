@@ -1,5 +1,5 @@
-import React, { useCallback, useState, useEffect } from 'react';
-import { EmblaOptionsType, EmblaCarouselType } from 'embla-carousel';
+import React, { useCallback, useState } from 'react';
+import { EmblaOptionsType } from 'embla-carousel';
 import useEmblaCarousel from 'embla-carousel-react';
 import AutoScroll from 'embla-carousel-auto-scroll';
 import { motion } from 'framer-motion';

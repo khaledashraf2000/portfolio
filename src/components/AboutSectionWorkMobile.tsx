@@ -2,10 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import CardsSwipe from "./CardsSwipe";
 import Carousel from "./carousel/Carousel";
-import HoverCard from "./HoverCard";
 import IPhoneVideoMockup from "./IphoneMockup";
 import MacbookMockup from "./MacbookMockup";
 import Link from "next/link";
+import Image from "next/image";
 
 // Fade-in variant for sections
 const sectionVariant = {
@@ -72,7 +72,7 @@ const ProjectCard = ({ href, imageSrc, title, year }: { href: string; imageSrc: 
         <div className="w-full h-[15rem] mb-4">
             <a href={href} target="_blank" rel="noopener noreferrer">
                 <div className="relative w-full h-full aspect-square">
-                    <img
+                    <Image
                         src={imageSrc}
                         alt={title}
                         className="w-full h-full object-cover rounded-lg shadow-md"

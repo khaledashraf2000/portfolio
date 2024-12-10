@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 
 interface IPhoneVideoMockupProps {
@@ -26,10 +27,14 @@ const IPhoneVideoMockup = ({ videoUrl, className = '' }: IPhoneVideoMockupProps)
         </div>
 
         {/* iPhone frame image - positioned on top of the video */}
-        <img
+        <Image
           src="/iphone.png"
           alt="iPhone frame"
           className="relative z-10 w-full h-auto"
+          layout="responsive"
+          width={1000}  // Adjust to match actual image dimensions
+          height={2000}  // Use appropriate aspect ratio for iPhone frame
+          priority  // Recommended for above-the-fold images
         />
       </div>
     </div>

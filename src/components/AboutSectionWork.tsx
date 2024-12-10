@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
-import { motion, useAnimate, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import CardsSwipe from "./CardsSwipe";
 import Carousel from "./carousel/Carousel";
 import HoverCard from "./HoverCard";
@@ -136,19 +136,20 @@ const sideSlideVariant = {
 const Section = ({ year, title, description, children, extraContent, delay = 0, isHeader = false, isFirst = false, sectionName }: SectionProps) => {
     const sectionRef = useRef(null);
     const isInView = useInView(sectionRef, { once: true, margin: "0px 0px -200px 0px" });
-    const [scrollProgress, setScrollProgress] = useState(0);
+    // this was for the x-divider but i dont use it
+    // const [scrollProgress, setScrollProgress] = useState(0);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollTop = window.scrollY;
-            const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollRatio = Math.min(scrollTop / documentHeight, 1);
-            setScrollProgress(scrollRatio);
-        };
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         const scrollTop = window.scrollY;
+    //         const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+    //         const scrollRatio = Math.min(scrollTop / documentHeight, 1);
+    //         setScrollProgress(scrollRatio);
+    //     };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    //     window.addEventListener('scroll', handleScroll);
+    //     return () => window.removeEventListener('scroll', handleScroll);
+    // }, []);
 
     return (
         <div className="grid grid-cols-5 divide-x">
@@ -234,12 +235,11 @@ const skillsData = {
 };
 
 export default function AboutSectionWork() {
-    const isDesktop = useMediaQuery({ minWidth: 1024 });
     const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
     const isMobile = useMediaQuery({ maxWidth: 767 });
-    const [scope, animate] = useAnimate();
+    // const [scope, animate] = useAnimate();
 
-    if (isMobile) {
+    if (isMobile || isTablet) {
         return (
             <AboutSectionWorkMobile />
         )
@@ -317,7 +317,7 @@ export default function AboutSectionWork() {
                 </p>
                 <ul className="list-disc list-inside section-description">
                     <li>
-                        Designed logos and brand identities that effectively communicated the clients' vision
+                        Designed logos and brand identities that effectively communicated the clients&apos; vision
                     </li>
                     <li>
                         Created engaging and eye-catching social media posts

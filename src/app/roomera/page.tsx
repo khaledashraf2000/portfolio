@@ -45,7 +45,7 @@ const Roomera: NextPage = () => {
 
     return (
         <>
-            {/* {!loadingComplete && <LoadingScreen onLoadingComplete={handleLoadingComplete} />} */}
+            {!loadingComplete && <LoadingScreen onLoadingComplete={handleLoadingComplete} />}
 
             <motion.section
                 initial="hidden"
@@ -185,9 +185,9 @@ const Roomera: NextPage = () => {
                         <div className="flex flex-col gap-4 md:w-2/3">
                             <h4 className="section-headline text-2xl">Research</h4>
                             <p className="section-description max-w-xl">
-                                During Roomera's early stages, we focused on defining our core value, understanding user needs,
+                                During Roomera&apos;s early stages, we focused on defining our core value, understanding user needs,
                                 and identifying our competitive edge. Through stakeholder discussions and market research,
-                                we conducted a SWOT analysis and heuristic reviews of competitors' apps, visualizing findings with radar charts.
+                                we conducted a SWOT analysis and heuristic reviews of competitors&apos; apps, visualizing findings with radar charts.
                             </p>
                             <div className="bg-gray-200 py-8 px-8 md:flex md:flex-col gap-2 rounded-lg md:max-w-xl hidden">
                                 <div className="mt-0 mb-0 p-0 flex gap-2">
@@ -274,7 +274,7 @@ const Roomera: NextPage = () => {
                                     height={300}
                                     alt="The Jones' persona"
                                 />
-                                <p className="section-description-headline">The Jones'</p>
+                                <p className="section-description-headline">The Jones&apos;</p>
                                 <ul className="section-description text-center">
                                     <li>Family interested in remodeling a home</li>
                                     <li>Have stable income, but maybe busy lives</li>
@@ -308,7 +308,7 @@ const Roomera: NextPage = () => {
                         <div className="flex flex-col gap-4 md:w-2/3">
                             <h4 className="section-headline text-2xl">Design</h4>
                             <p className="section-description max-w-xl">
-                                Based on our research, we concluded that it's time to design our application user interface. So I began with making a high-level information architecture diagram, followed by two concepts of a prototype to the application.
+                                Based on our research, we concluded that it&apos;s time to design our application user interface. So I began with making a high-level information architecture diagram, followed by two concepts of a prototype to the application.
                             </p>
                             <h5 className='section-description-headline mt-8'>Information Architecture</h5>
                             <p className='section-description'>

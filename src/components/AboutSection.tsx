@@ -3,7 +3,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import HoverCard from "./HoverCard";
-import Video from "./Video";
 import { useMediaQuery } from "react-responsive";
 import './horizontal-scroll.css';
 
