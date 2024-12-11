@@ -16,12 +16,9 @@ const AboutSectionWork = dynamic(() => import('@/components/AboutSectionWork'), 
 export default function Home() {
   return (
     <>
-      {/* <SVGanimation /> */}
       <HeroSection />
       <AboutSection />
       <AboutSectionWork />
-      {/* <ContactSection /> */}
-      {/* <div className='h-screen w-full'></div> */}
     </>
   );
 }

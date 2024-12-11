@@ -443,7 +443,7 @@ export default function AboutSectionWork() {
 
                     <motion.div>
                         <HoverCard>
-                            <IPhoneVideoMockup videoUrl="https://player.cloudinary.com/embed/?public_id=roomera_2_qgqk5h&cloud_name=dv3s0vp2b&player[autoplay]=true&player[autoplayMode]=on-scroll&player[muted]=true&player[loop]=true&player[controls]=false&player[hideContextMenu]=true&player[showLogo]=false&player[seekThumbnails]=false" />
+                            <IPhoneVideoMockup videoUrl="/roomera 2.mp4" />
                         </HoverCard>
                     </motion.div>
                 </div>
