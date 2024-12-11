@@ -47,7 +47,7 @@ export default function HeroSection() {
         // onMouseOver={() => setIsActive(true)}
         // onMouseLeave={() => setIsActive(false)}
         >
-            {!loadingComplete && <LoadingScreen onLoadingComplete={handleLoadingComplete} />}
+            {/* {!loadingComplete && <LoadingScreen onLoadingComplete={handleLoadingComplete} />} */}
 
             {/* <Canvas className="absolute inset-0 mix-blend-soft-light">
                 <HolographicBackground />
