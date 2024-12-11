@@ -76,6 +76,8 @@ const ProjectCard = ({ href, imageSrc, title, year }: { href: string; imageSrc: 
                         src={imageSrc}
                         alt={title}
                         className="w-full h-full object-cover rounded-lg shadow-md"
+                        width={300}
+                        height={300}
                     />
                     <div className="absolute inset-0 bg-black/40 rounded-lg text-white flex items-end justify-between p-4">
                         <p className="uppercase">{title}</p>
