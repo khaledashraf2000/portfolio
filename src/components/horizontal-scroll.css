@@ -61,7 +61,7 @@
 }
 
 .video {
-    @apply w-full h-[90%] object-cover rounded-lg;
+    @apply w-full h-full object-cover rounded-lg;
 }
 
 /* Text container styles */

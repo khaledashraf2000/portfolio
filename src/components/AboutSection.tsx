@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import HoverCard from "./HoverCard";
 import { useMediaQuery } from "react-responsive";
 import './horizontal-scroll.css';
+import Video from "./Video";
 
 interface VideoSectionProps {
     src: string;
@@ -18,7 +19,8 @@ const VideoSection: React.FC<VideoSectionProps> = ({
     src,
     opacity,
     width = '20%',
-    isMobile
+    isMobile,
+    objectPosition
 }) => (
     <motion.div
         className="video-container"
@@ -28,16 +30,11 @@ const VideoSection: React.FC<VideoSectionProps> = ({
             opacity: isMobile ? 1 : opacity
         }}
     >
-        <HoverCard>
-            <iframe
-                src={src}
-                width="768"
-                height="1360"
-                allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
-                frameBorder="0"
-                className="video"
-            ></iframe>
-        </HoverCard>
+        <Video
+            src={src}
+            className={`video ${objectPosition !== 'center' ? `object-[${objectPosition}]` : ''}`}
+        />
+
     </motion.div>
 );
 
@@ -90,7 +87,7 @@ export default function AboutSection() {
                         viewport={{ once: true, amount: 0.1 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <VideoSection src="https://player.cloudinary.com/embed/?public_id=x3kipepoaqwt9ichhjq1&cloud_name=dv3s0vp2b&player[autoplay]=true&player[autoplayMode]=on-scroll&player[muted]=true&player[loop]=true&player[controls]=false&player[hideContextMenu]=true&player[showLogo]=false" isMobile={true} />
+                        <VideoSection src="/reel4.mp4" isMobile={true} />
                     </motion.div>
 
                     <motion.div
@@ -162,25 +159,25 @@ export default function AboutSection() {
                     className="content-wrapper first"
                     style={{ opacity, scale }}
                 >
-                    <VideoSection src="https://player.cloudinary.com/embed/?public_id=x3kipepoaqwt9ichhjq1&cloud_name=dv3s0vp2b&player[autoplay]=true&player[autoplayMode]=on-scroll&player[muted]=true&player[loop]=true&player[controls]=false&player[hideContextMenu]=true&player[showLogo]=false" opacity={opacities[0]} objectPosition="50% 85%" />
+                    <VideoSection src="/reel4.mp4" opacity={opacities[0]} objectPosition="50% 85%" />
 
                     <TextSection opacity={opacities[1]}>
                         <p className="caption">Originally from Alexandria, Egypt, I have deep love for the Mediterranean life</p>
                         <div className="video-container narrow">
-                            <VideoSection src="https://player.cloudinary.com/embed/?public_id=cga1uelxgpvaeiekrlbk&cloud_name=dv3s0vp2b&player[autoplay]=true&player[autoplayMode]=on-scroll&player[muted]=true&player[loop]=true&player[controls]=false&player[showLogo]=false" opacity={opacities[1]} width="100%" />
+                            <VideoSection src="/reel2.mp4" opacity={opacities[1]} width="100%" />
                         </div>
                     </TextSection>
 
-                    <VideoSection src="https://player.cloudinary.com/embed/?public_id=ffc8pwryngoadz8knpf6&cloud_name=dv3s0vp2b&player[autoplay]=true&player[autoplayMode]=on-scroll&player[muted]=true&player[loop]=true&player[controls]=false&player[hideContextMenu]=true&player[showLogo]=false" opacity={opacities[2]} />
+                    <VideoSection src="/reel5.mp4" opacity={opacities[2]} />
 
                     <TextSection opacity={opacities[3]}>
                         <div className="video-container narrow">
-                            <VideoSection src="https://player.cloudinary.com/embed/?public_id=utotqytuoomeijanptvo&cloud_name=dv3s0vp2b&player[autoplay]=true&player[autoplayMode]=on-scroll&player[muted]=true&player[loop]=true&player[controls]=false&player[hideContextMenu]=true&player[showLogo]=false" opacity={opacities[3]} width="100%" />
+                            <VideoSection src="/reel.mp4" opacity={opacities[3]} width="100%" />
                         </div>
                         <p className="caption">I have a hobby of making videos about Alexandria</p>
                     </TextSection>
 
-                    <VideoSection src="https://player.cloudinary.com/embed/?public_id=mkugejktbsmirpe4bqkd&cloud_name=dv3s0vp2b&player[autoplay]=true&player[autoplayMode]=on-scroll&player[muted]=true&player[loop]=true&player[controls]=false&player[hideContextMenu]=true&player[showLogo]=false" opacity={opacities[4]} />
+                    <VideoSection src="/reel7.mp4" opacity={opacities[4]} />
                 </motion.div>
             </div>
         </div>
