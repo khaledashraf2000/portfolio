@@ -17,7 +17,6 @@ interface VideoSectionProps {
 const VideoSection: React.FC<VideoSectionProps> = ({
     src,
     opacity,
-    objectPosition = 'center',
     width = '20%',
     isMobile
 }) => (

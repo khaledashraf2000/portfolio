@@ -13,7 +13,7 @@ const IPhoneVideoMockup = ({ videoUrl, className = '' }: IPhoneVideoMockupProps)
       <div className="relative w-72">
         {/* Video layer - positioned behind the frame */}
         <div className="absolute inset-0 z-0 left-2">
-          <video
+          {/* <video
             className="w-[98%] h-full object-cover rounded-[50px]"
             autoPlay
             loop
@@ -23,7 +23,14 @@ const IPhoneVideoMockup = ({ videoUrl, className = '' }: IPhoneVideoMockupProps)
           >
             <source src={videoUrl} type="video/mp4" />
             Your browser does not support the video tag.
-          </video>
+          </video> */}
+          <iframe
+            src={videoUrl}
+            width="640"
+            height="360"
+            allow="autoplay; fullscreen; encrypted-media; picture-in-picture;"
+            className="w-[98%] h-full object-cover rounded-[50px]"
+          ></iframe>
         </div>
 
         {/* iPhone frame image - positioned on top of the video */}

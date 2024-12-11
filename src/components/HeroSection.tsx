@@ -34,7 +34,7 @@ const fadeIn = {
 
 export default function HeroSection() {
     // const [isActive, setIsActive] = useState(false);
-    const [loadingComplete, setLoadingComplete] = useState(false);
+    const [loadingComplete, setLoadingComplete] = useState(true);
 
     const handleLoadingComplete = () => {
         setLoadingComplete(true);
