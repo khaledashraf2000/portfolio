@@ -1,14 +1,9 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useRef, useEffect } from 'react';
 import { EmblaOptionsType } from 'embla-carousel';
 import useEmblaCarousel from 'embla-carousel-react';
 import AutoScroll from 'embla-carousel-auto-scroll';
 import { motion } from 'framer-motion';
 import './embla.css';
-import {
-  usePrevNextButtons,
-  PrevButton,
-  NextButton
-} from './EmblaCarouselArrowButtons';
 
 type PropType = {
   slides: React.ReactNode[]
@@ -19,57 +14,56 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       ...options,
-      loop: true, // Ensure continuous looping
+      loop: false,
+      align: 'center', // Ensure slides are centered
+      dragFree: false, // Snap to slides
+      containScroll: 'trimSnaps', // Ensure proper scrolling
+      slidesToScroll: 1,
       breakpoints: {
-        '(max-width: 600px)': {
+        '(max-width: 768px)': {
           slidesToScroll: 1,
+          align: 'center'
         }
       }
     },
     [
       AutoScroll({
-        playOnInit: true,
-        speed: 1, // Reduced speed for smoother scrolling
-        stopOnInteraction: false, // Continue scrolling after user interaction
-        stopOnMouseEnter: false, // Don't stop on mouse hover
-        // Removed 'jump' option as it's not a valid property
+        playOnInit: true, // Disable auto-scroll by default
+        speed: 0.5, // Slower, smoother scrolling
+        stopOnInteraction: true, // Stop on user interaction
+        stopOnMouseEnter: true // Stop when mouse enters
       })
     ]
-  )
+  );
 
-  // State to track touch interaction
-  const [isTouching, setIsTouching] = useState(false)
-
-  // Button controls
-  const {
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick
-  } = usePrevNextButtons(emblaApi)
+  // State to track touch and mouse interactions
+  const [isTouching, setIsTouching] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
 
   // Enhanced touch and mouse interactions
   const handleTouchStart = useCallback(() => {
-    setIsTouching(true)
-    emblaApi?.plugins()?.autoScroll?.stop()
-  }, [emblaApi])
+    setIsTouching(true);
+    emblaApi?.plugins()?.autoScroll?.stop();
+  }, [emblaApi]);
 
   const handleTouchEnd = useCallback(() => {
-    setIsTouching(false)
-    emblaApi?.plugins()?.autoScroll?.play()
-  }, [emblaApi])
+    setIsTouching(false);
+    if (!isHovering) {
+      emblaApi?.plugins()?.autoScroll?.play();
+    }
+  }, [emblaApi, isHovering]);
 
   const handleMouseEnter = useCallback(() => {
-    if (!isTouching) {
-      emblaApi?.plugins()?.autoScroll?.stop()
-    }
-  }, [emblaApi, isTouching])
+    setIsHovering(true);
+    emblaApi?.plugins()?.autoScroll?.stop();
+  }, [emblaApi]);
 
   const handleMouseLeave = useCallback(() => {
+    setIsHovering(false);
     if (!isTouching) {
-      emblaApi?.plugins()?.autoScroll?.play()
+      emblaApi?.plugins()?.autoScroll?.play();
     }
-  }, [emblaApi, isTouching])
+  }, [emblaApi, isTouching]);
 
   return (
     <div className="relative">
@@ -93,25 +87,8 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
         </div>
       </motion.div>
 
-      {/* Mobile and Desktop Navigation Buttons */}
-      <div className="absolute top-1/2 transform -translate-y-1/2 w-full flex justify-between items-center pointer-events-none">
-        <div className="pointer-events-auto">
-          <PrevButton
-            onClick={onPrevButtonClick}
-            disabled={prevBtnDisabled}
-            className="embla__button--prev shadow-md bg-white/70 hover:bg-white/90"
-          />
-        </div>
-        <div className="pointer-events-auto">
-          <NextButton
-            onClick={onNextButtonClick}
-            disabled={nextBtnDisabled}
-            className="embla__button--next shadow-md bg-white/70 hover:bg-white/90"
-          />
-        </div>
-      </div>
     </div>
   )
 }
 
-export default EmblaCarousel
+export default EmblaCarousel;

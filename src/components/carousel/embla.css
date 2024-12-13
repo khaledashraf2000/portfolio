@@ -5,6 +5,8 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  overflow: hidden;
 }
 
 .embla__viewport {
@@ -17,6 +19,8 @@
   touch-action: pan-y pinch-zoom;
   margin-left: calc(var(--slide-spacing) * -1);
   gap: var(--slide-spacing);
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 .embla__slide {
@@ -81,26 +85,19 @@
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .embla {
-    --slide-size: 100%;
-    /* Changed from 80% to 100% to make slide full screen width */
-    --slide-spacing: 0;
-    /* Remove spacing */
-    padding: 0;
-    /* Remove padding */
+    --slide-size: 80%; /* Changed from 100% to 80% for better visibility */
+    --slide-spacing: 1rem;
+    padding: 0 1rem;
   }
 
   .embla__container {
-    gap: 3rem;
-    /* Remove gap between slides */
+    gap: 1rem;
     margin-left: 0;
-    /* Remove negative margin */
   }
 
   .embla__slide {
-    flex: 0 0 100%;
-    /* Ensure slide takes full width */
+    flex: 0 0 100%; /* Ensure slide takes 80% width */
     padding-left: 0;
-    /* Remove left padding */
   }
 
   .embla__button {
@@ -117,6 +114,6 @@
 /* Tablet Responsiveness */
 @media (min-width: 769px) and (max-width: 1200px) {
   .embla {
-    --slide-size: 60%;
+    --slide-size: 70%;
   }
 }
