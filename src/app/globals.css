@@ -55,7 +55,7 @@
     }
 
     footer .logo {
-        @apply text-3xl md:text-5xl;
+        @apply text-4xl md:text-6xl;
         font-family: 'Ephesis', serif;
     }
 }
