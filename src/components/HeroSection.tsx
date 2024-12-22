@@ -53,12 +53,21 @@ export default function HeroSection() {
             {/* <Canvas className="absolute inset-0 mix-blend-soft-light">
                 <HolographicBackground />
             </Canvas> */}
-            <div className="w-full h-screen relative">
+            {/* <div className="w-full h-screen relative">
                 <Canvas>
                     <SimpleShaderBackground />
                 </Canvas>
+            </div> */}
+            <div className='w-full h-screen relative'>
+                <video
+                    src="/background.webm"
+                    className="absolute inset-0 w-full h-full object-cover mix-blend-soft-light opacity-50"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                />
             </div>
-
             <div className="absolute inset-0 flex flex-col justify-between items-center px-4 py-4 z-10">
                 <motion.div
                     initial="hidden"
