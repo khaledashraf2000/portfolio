@@ -208,13 +208,18 @@ const Roomera: NextPage = () => {
                             variants={fadeInVariants}
                         >
                             <HoverCard>
-                                <Image
-                                    src="/heuristic evaluation.gif"
-                                    alt="Roomera Heuristic Evaluation"
+                                <video
+                                    src="/heuristic evaluation.webm"
                                     width={800}
                                     height={300}
                                     className="border border-gray-500 rounded-lg"
-                                />
+                                    loop
+                                    muted
+                                    autoPlay
+                                >
+                                    Your browser does not support the video tag.
+                                </video>
+
                             </HoverCard>
                         </motion.div>
 
