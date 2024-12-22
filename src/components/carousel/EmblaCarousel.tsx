@@ -28,7 +28,7 @@ const EmblaCarousel: React.FC<PropType> = ({ slides, options }) => {
     },
     [
       AutoScroll({
-        playOnInit: true, // Disable auto-scroll by default
+        playOnInit: false, // Disable auto-scroll by default
         speed: 0.5, // Slower, smoother scrolling
         stopOnInteraction: true, // Stop on user interaction
         stopOnMouseEnter: true // Stop when mouse enters

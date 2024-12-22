@@ -18,7 +18,7 @@ interface LinkCardProps {
 
 export default function LinkCard({ title, description, img, url }: LinkCardProps) {
     return (
-        <Card className="w-[400px] h-[450px] flex flex-col justify-between">
+        <Card className="w-[90%] md:min-w-[450px] h-[450px] flex flex-col justify-between">
             <CardHeader>
                 <CardTitle className="whitespace-normal select-none text-left">{title}</CardTitle>
                 <CardDescription className="whitespace-normal select-none text-left">{description}</CardDescription>

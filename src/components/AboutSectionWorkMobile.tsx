@@ -184,7 +184,7 @@ export default function AboutSectionWorkMobile() {
                         I collaborated with my fellow front-end developer interns to create a simple yet functional and easy to use Task Management webapp. I also had the opportunity to chat with designers and engineers and learned from them how the business in general works
                     </p>
                     <div className="flex justify-center mb-6">
-                        <MacbookMockup videoUrl="/xceed.mp4" />
+                        <MacbookMockup videoUrl="/xceed.webm" />
                     </div>
                     <Link href="https://taskmaster-231fe.web.app/login" target="_blank" rel="noopener noreferrer" className="w-full flex justify-center">
                         <button className="btn-primary mt-10" type="button">
@@ -207,7 +207,7 @@ export default function AboutSectionWorkMobile() {
                         Roomera is a fun and intuitive VR, AR and mobile tool made to help people imagine and explore their home renovation ideas, so that they are able to visualize their ideas before carrying out their renovation project.
                     </p>
                     <div className="flex justify-center mb-6">
-                        <IPhoneVideoMockup videoUrl="/roomera 2.mp4" />
+                        <IPhoneVideoMockup videoUrl="/roomera 2.webm" />
                     </div>
                     <div className="flex justify-center">
                         <Link href="/roomera">

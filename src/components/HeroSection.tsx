@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import ShinyText from './ShinyText';
 import HoverCard from './HoverCard';
+import SimpleShaderBackground from './ShaderBackground';
 
 // Dynamically import heavy components
 const Canvas = dynamic(
@@ -49,9 +50,14 @@ export default function HeroSection() {
         >
             {/* {!loadingComplete && <LoadingScreen onLoadingComplete={handleLoadingComplete} />} */}
 
-            <Canvas className="absolute inset-0 mix-blend-soft-light">
+            {/* <Canvas className="absolute inset-0 mix-blend-soft-light">
                 <HolographicBackground />
-            </Canvas>
+            </Canvas> */}
+            <div className="w-full h-screen relative">
+                <Canvas>
+                    <SimpleShaderBackground />
+                </Canvas>
+            </div>
 
             <div className="absolute inset-0 flex flex-col justify-between items-center px-4 py-4 z-10">
                 <motion.div

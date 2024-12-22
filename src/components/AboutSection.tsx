@@ -87,7 +87,7 @@ export default function AboutSection() {
                         viewport={{ once: true, amount: 0.1 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <VideoSection src="/reel4.mp4" isMobile={true} />
+                        <VideoSection src="/reel4.webm" isMobile={true} />
                     </motion.div>
 
                     <motion.div
@@ -107,7 +107,7 @@ export default function AboutSection() {
                         viewport={{ once: true, amount: 0.1 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <VideoSection src="/reel2.mp4" isMobile={true} />
+                        <VideoSection src="/reel2.webm" isMobile={true} />
                     </motion.div>
 
                     <motion.div
@@ -116,7 +116,7 @@ export default function AboutSection() {
                         viewport={{ once: true, amount: 0.1 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <VideoSection src="/reel5.mp4" isMobile={true} />
+                        <VideoSection src="/reel5.webm" isMobile={true} />
                     </motion.div>
 
                     <motion.div
@@ -125,7 +125,7 @@ export default function AboutSection() {
                         viewport={{ once: true, amount: 0.1 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <VideoSection src="/reel.mp4" isMobile={true} />
+                        <VideoSection src="/reel.webm" isMobile={true} />
                     </motion.div>
 
                     <motion.div
@@ -145,7 +145,7 @@ export default function AboutSection() {
                         viewport={{ once: true, amount: 0.1 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <VideoSection src="/reel7.mp4" isMobile={true} />
+                        <VideoSection src="/reel7.webm" isMobile={true} />
                     </motion.div>
                 </div>
             </div>
@@ -159,25 +159,25 @@ export default function AboutSection() {
                     className="content-wrapper first"
                     style={{ opacity, scale }}
                 >
-                    <VideoSection src="/reel4.mp4" opacity={opacities[0]} objectPosition="50% 85%" />
+                    <VideoSection src="/reel4.webm" opacity={opacities[0]} objectPosition="50% 85%" />
 
                     <TextSection opacity={opacities[1]}>
                         <p className="caption">Originally from Alexandria, Egypt, I have deep love for the Mediterranean life</p>
                         <div className="video-container narrow">
-                            <VideoSection src="/reel2.mp4" opacity={opacities[1]} width="100%" />
+                            <VideoSection src="/reel2.webm" opacity={opacities[1]} width="100%" />
                         </div>
                     </TextSection>
 
-                    <VideoSection src="/reel5.mp4" opacity={opacities[2]} />
+                    <VideoSection src="/reel5.webm" opacity={opacities[2]} />
 
                     <TextSection opacity={opacities[3]}>
                         <div className="video-container narrow">
-                            <VideoSection src="/reel.mp4" opacity={opacities[3]} width="100%" />
+                            <VideoSection src="/reel.webm" opacity={opacities[3]} width="100%" />
                         </div>
                         <p className="caption">I have a hobby of making videos about Alexandria</p>
                     </TextSection>
 
-                    <VideoSection src="/reel7.mp4" opacity={opacities[4]} />
+                    <VideoSection src="/reel7.webm" opacity={opacities[4]} />
                 </motion.div>
             </div>
         </div>

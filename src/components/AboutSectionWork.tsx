@@ -384,7 +384,7 @@ export default function AboutSectionWork() {
                     </motion.div>
 
                     <motion.div>
-                        <MacbookMockup videoUrl="/xceed.mp4" />
+                        <MacbookMockup videoUrl="/xceed.webm" />
                     </motion.div>
                 </div>
             </Section>
@@ -443,7 +443,7 @@ export default function AboutSectionWork() {
 
                     <motion.div>
                         <HoverCard>
-                            <IPhoneVideoMockup videoUrl="/roomera 2.mp4" />
+                            <IPhoneVideoMockup videoUrl="/roomera 2.webm" />
                         </HoverCard>
                     </motion.div>
                 </div>

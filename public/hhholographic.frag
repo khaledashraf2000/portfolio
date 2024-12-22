@@ -2,34 +2,44 @@
 precision mediump float;
 #endif
 
-uniform vec2 u_resolution;
-uniform float u_time;
-uniform float u_washout;
-uniform float u_zoom;
-uniform float u_complexity;
-uniform float u_mix;
+uniform float time;
+uniform vec2 mouse;
+uniform vec2 resolution;
 
-void main() {
-    vec2 coord = u_zoom * (gl_FragCoord.xy - u_resolution / 3.5) / min(u_resolution.y, u_resolution.x);
+// a raymarching experiment by kabuto
+//fork by tigrou ind (2013.01.22)
 
-    // Apply horizontal stretch
-    coord.x /= 5.0;
-    coord.y /= 2.0;
 
-    float len;
-    for (int i = 0; i < 6; i++) {
-        len = length(vec2(coord.x, coord.y));
+const int MAXITER = 10;
 
-        coord.x = (coord.x + cos(coord.y + sin(len)) + sin(u_time / 16.0)) * u_complexity;
-        coord.y = (coord.y + sin(coord.x + cos(len)) + cos(u_time / 20.0)) * u_complexity;
-    }
-
-    vec3 base_color = vec3(255.0/255.0, 255.0/255.0, 255.0/255.0);
-    
-    float brightness = max(u_washout, abs(cos(len * 2.0)));
-    
-    vec3 final_color = brightness * base_color;
-    final_color = mix(final_color, vec3(1.0), u_mix);
-
-    gl_FragColor = vec4(final_color, 1.0);
+vec3 field(vec3 p) {
+	p *= .1;
+	float f = .1;
+	for (int i = 0; i < 3; i++) {
+		p = p.yzx; //*mat3(.8,.6,0,-.6,.8,0,0,0,1);
+//		p += vec3(.123,.456,.789)*float(i);
+		p = abs(fract(p)-.5);
+		p *= 3.0;
+		f *= 3.0;
+	}
+	p *= p;
+	return sqrt(p+p.yzx)/f-.05;
 }
+
+void main( void ) {
+	vec3 dir = normalize(vec3((gl_FragCoord.xy-resolution*.5)/resolution.x,1.));
+	float a = time * 0.1;
+	vec3 pos = vec3(0.0,time*0.1,0.0);
+	dir *= mat3(1,0,0,0,cos(a),-sin(a),0,sin(a),cos(a));
+	dir *= mat3(cos(a),0,-sin(a),0,1,0,sin(a),0,cos(a));
+	vec3 color = vec3(0);
+	for (int i = 0; i < MAXITER; i++) {
+		vec3 f2 = field(pos);
+		float f = min(min(f2.x,f2.y),f2.z);
+		
+		pos += dir*f;
+		color += float(MAXITER-i)/(f2+.01);
+	}
+	vec3 color3 = vec3(1.-1./(1.+color*(.09/float(MAXITER*MAXITER))));
+	color3 *= color3;
+	gl_FragColor = vec4(vec3(color3.r+color3.g+color3.b),1.);
