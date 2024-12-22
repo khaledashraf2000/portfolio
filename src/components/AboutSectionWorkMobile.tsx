@@ -25,7 +25,7 @@ const projectData = [
     {
         href: "https://www.behance.net/gallery/212449641/Bader",
         imageSrc: "/images/bader2.png",
-        videoSrc: "/videos/bader.mp4",
+        videoSrc: "/videos/bader.webm",
         title: "Bader charity brand identity",
         year: "2024"
     },
