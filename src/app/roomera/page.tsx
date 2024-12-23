@@ -2,7 +2,6 @@
 
 import { NextPage } from 'next';
 import dynamic from 'next/dynamic';
-import { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import {
@@ -13,8 +12,6 @@ import {
     BreadcrumbSeparator,
 } from "@/components/Breadcrumbs";
 import HoverCard from '@/components/HoverCard';
-
-const LoadingScreen = dynamic(() => import('../../components/LoadingScreen'));
 
 // Fade-in animation variant
 const fadeInVariants = {
@@ -30,12 +27,6 @@ const fadeInVariants = {
 };
 
 const Roomera: NextPage = () => {
-    const [loadingComplete, setLoadingComplete] = useState(false);
-
-    const handleLoadingComplete = () => {
-        setLoadingComplete(true);
-    };
-
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -45,8 +36,6 @@ const Roomera: NextPage = () => {
 
     return (
         <>
-            {!loadingComplete && <LoadingScreen onLoadingComplete={handleLoadingComplete} />}
-
             <motion.section
                 initial="hidden"
                 whileInView="visible"
@@ -216,6 +205,8 @@ const Roomera: NextPage = () => {
                                     loop
                                     muted
                                     autoPlay
+                                    playsInline
+                                    controls={false}
                                 >
                                     Your browser does not support the video tag.
                                 </video>
