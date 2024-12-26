@@ -56,7 +56,7 @@ const IPhoneVideoMockup = ({ videoUrl, className = '' }: IPhoneVideoMockupProps)
             onLoadedMetadata={handleLoadedMetadata}
           >
             {isVisible && (
-              <source src={videoUrl} type="video/mp4" />
+              <source src={videoUrl} type="video/webm" />
             )}
             Your browser does not support the video tag.
           </video>
